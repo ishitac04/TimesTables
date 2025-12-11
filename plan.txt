@@ -1,0 +1,7 @@
+- make framework
+- make times table logic
+- make it part of grid
+- make grid pretty
+- make floating treasure chests/ something similar
+- add timer 
+- add score counter
