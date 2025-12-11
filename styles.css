@@ -28,6 +28,7 @@ body {
     z-index: 10;
 }
 #innerinnerbox {
+    font-size: 50;
     background-color: rgb(255, 255, 255);
     border: 5px solid #000000;
     border-radius: 5%;
@@ -37,6 +38,7 @@ body {
     top: 105px;
     position: fixed;
     z-index: 15;
+    text-align: center;
 }
 
 #buttonsbox {
@@ -56,10 +58,25 @@ body {
 
 .button {
     border: 3px solid #000000;
-    background-color: aqua;
+    background-color: rgb(255, 255, 255);
     border-radius: 5%;
     height: 70px;
     width: 130px;
     z-index: 100;
     text-align: center;
+}
+
+#scorebox {
+    font-size: 30;
+    background-color: #ffffff;
+    border: 3px solid #000000;
+    border-radius: 5%;
+    height: 50px;
+    width: 150px;
+    left: 1180px;
+    top: 13px;
+    margin-top: 15px;
+    position: fixed;
+    text-align: center;
+    z-index: 90;   
 }

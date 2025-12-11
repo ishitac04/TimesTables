@@ -1,7 +1,10 @@
 - make framework
 - make times table logic
 - make it part of grid
+- make typing work
+- make  it detect and match typed text
 - make grid pretty
 - make floating treasure chests/ something similar
 - add timer 
 - add score counter
+- make start/ end screen
