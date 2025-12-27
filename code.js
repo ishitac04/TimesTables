@@ -1,12 +1,32 @@
 let x;
 let y;
+let wrongx = [];
+let wrongy = [];
 let ans="";
 let correctans;
 let score=0;
 let questioncount=0;
-
+let timeleft = 10;
+let timepercent=100;
+const timebar = document.getElementById("timerbar");
 let innerinnerbox = document.getElementById("innerinnerbox");
 let scorebox = document.getElementById("scorebox");
+
+function reduceTime() {
+    if (timeleft > 0) {
+        timeleft = timeleft - 1;
+        timepercent=(timeleft/10) * 100;
+        timebar.style.height = timepercent + "%";
+    } else if (timeleft <= 0) {
+        timeleft=100;
+        alert("The answer was "+correctans);
+        wrongx.push(x);
+        wrongy.push(y);
+        console.log(wrongx)
+        console.log(wrongy)
+        generateQuestion();
+    }
+}
 
 function generateQuestion() {
     ans="";
@@ -29,16 +49,23 @@ document.addEventListener("keydown", (e) => {
     }
 
     if (e.key == "Enter") {
+        clearInterval(timerInterval);
+        timeleft = 10;
+        timerInterval = setInterval(reduceTime, 1000);
+
         if (Number(ans) == correctans) {
             score++;
             scorebox.textContent = "Score: "+score;
         } else {
             alert("The answer was "+correctans);
+            wrongx.push(x);
+            wrongy.push(y);
         }
         generateQuestion();
     }
 });
 
+timerInterval = setInterval(reduceTime,1000);
 for (i=0;i<30;i++) {
     generateQuestion();
 }
