@@ -20,6 +20,8 @@ function reduceTime() {
     } else if (timeleft <= 0) {
         timeleft=100;
         alert("The answer was "+correctans);
+        scorebox.textContent = "Score: "+score;
+        score=0;
         wrongx.push(x);
         wrongy.push(y);
         console.log(wrongx)
@@ -31,7 +33,7 @@ function reduceTime() {
 function generateQuestion() {
     ans="";
     questioncount=questioncount+1;
-    x = Math.floor(Math.random()*19) + 2;
+    x = Math.floor(Math.random()*10) + 10;
     y = Math.floor(Math.random()*11) + 2;
     innerinnerbox.textContent = x+" x "+y+" = ";
     correctans=x*y;
@@ -58,6 +60,8 @@ document.addEventListener("keydown", (e) => {
             scorebox.textContent = "Score: "+score;
         } else {
             alert("The answer was "+correctans);
+            score=0;
+            scorebox.textContent = "Score: "+score;
             wrongx.push(x);
             wrongy.push(y);
         }
